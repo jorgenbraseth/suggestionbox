@@ -7,9 +7,8 @@ SuggestionBox::Application.routes.draw do
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:
-  match 'suggestions/categories/:category' => 'suggestions#categoryIndex', :as => :categoryIndex
-  # This route can be invoked with purchase_url(:id => product.id)
-
+  match 'box/:category' => 'suggestions#category_index', :as => :category
+  match 'suggestions/:id/vote' => 'suggestions#vote', :as => :vote
   # Sample resource route (maps HTTP verbs to controller actions automatically):
     resources :suggestions
 
@@ -51,8 +50,4 @@ SuggestionBox::Application.routes.draw do
   root :to => 'suggestions#index'
 
   # See how all your routes lay out with "rake routes"
-
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
 end

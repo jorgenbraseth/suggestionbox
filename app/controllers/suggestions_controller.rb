@@ -10,10 +10,10 @@ class SuggestionsController < ApplicationController
     end
   end
 
-  def categoryIndex
+  def category_index
     @category = params[:category]
-    @suggestions = Suggestion.find_all_by_category(@category)
-
+    @suggestions = Suggestion.where("category = ?",@category).order("suggestion_vote_count")
+    @suggestions.sort_by!(&:num_votes).reverse!
 
     respond_to do |format|
       format.html { render :template => "suggestions/index"}
@@ -46,6 +46,12 @@ class SuggestionsController < ApplicationController
   # GET /suggestions/1/edit
   def edit
     @suggestion = Suggestion.find(params[:id])
+  end
+
+  def vote
+    @suggestion = Suggestion.find(params[:id])
+    @suggestion.vote!(request.remote_ip)
+    redirect_to suggestion_path
   end
 
   # POST /suggestions

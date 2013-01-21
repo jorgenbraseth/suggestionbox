@@ -1,4 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<%= @suggestion.description %><br />
+
+Category: <%= link_to @suggestion.category, category_path(@suggestion.category) %><br />
+Suggestion: <%= @suggestion.description %><br />
+<% unless @suggestion.voted? request.remote_ip %>
+    <%= button_to "Vote", vote_path %>
+<% end %>
+Votes: <%= @suggestion.num_votes %>
 <%= link_to 'Back', suggestions_path %>

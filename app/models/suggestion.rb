@@ -1,3 +1,23 @@
 class Suggestion < ActiveRecord::Base
+  has_many :suggestion_votes
+
   attr_accessible :category, :description
+
+  def vote!(voter)
+    unless(voted? voter)
+      vote = SuggestionVote.create!(:voter => voter, :suggestion_id => id)
+      self.suggestion_votes << vote
+      save!
+    end
+  end
+
+  def voted?(voter)
+    suggestion_votes.find_by_voter(voter) != nil
+  end
+
+  def num_votes
+    suggestion_votes_count
+  end
+
+
 end
