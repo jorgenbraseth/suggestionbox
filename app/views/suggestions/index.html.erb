@@ -1,21 +1,18 @@
-<h1><%= @category %></h1>
+<header>
+  <h1>Suggestion Box</h1>
 
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+</header>
 
-<% @suggestions.each do |suggestion| %>
-  <tr>
-    <td><%= suggestion.category %></td>
-    <td><%= link_to suggestion.description, suggestion %></td>
-    <td><%= link_to 'Destroy', suggestion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<ul class="suggestionList">
+  <li class="suggestion">
+    <% @categories.each do |category| %>
+        <div class="category">
+        <a href="<%= category_path(category.first) %>">"<span class="name"><%= category.first %></span>"</a>
+        (<span class="count"><%= category.second %> suggestions)</span>
+        </div>
 
-<br />
+  <% end %>
+  </li>
+</ul>
 
-<%= link_to 'New Suggestion', new_suggestion_path %>
+

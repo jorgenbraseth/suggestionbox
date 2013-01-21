@@ -1,0 +1,24 @@
+<header>
+  <h1><%= @category %></h1>
+  <span class="newSuggestion"><%= link_to 'Add suggestion', new_in_category_path %></span>
+</header>
+
+<% @suggestions.each do |suggestion| %>
+    <ul class="suggestionList">
+      <li class="suggestion" id="suggestion_<%= suggestion.id %>">
+        &bdquo;<%= suggestion.description %>&ldquo;
+        <footer>
+          <span class="voteCount" >Votes: <span class="count"><%= suggestion.num_votes %></span>
+          <a href="<%= vote_path(suggestion) %>" class="voteLink graphicButton <%= suggestion.voted?(request.remote_ip) ? "":"enabled" %>">+</a>
+          </span>
+        </footer>
+        <div class="actions">
+          <span class="deleteAction action"><%= link_to 'Delete', suggestion, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+        </div>
+
+
+      </li>
+    </ul>
+<% end %>
+
+

@@ -9,8 +9,9 @@ SuggestionBox::Application.routes.draw do
   # Sample of named route:
   match 'box/:category' => 'suggestions#category_index', :as => :category
   match 'suggestions/:id/vote' => 'suggestions#vote', :as => :vote
+  match "box/:category/suggestions/new" => "suggestions#new", :as => :new_in_category
   # Sample resource route (maps HTTP verbs to controller actions automatically):
-    resources :suggestions
+  resources :suggestions
 
   # Sample resource route with options:
   #   resources :products do

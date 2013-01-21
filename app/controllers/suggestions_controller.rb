@@ -2,21 +2,25 @@ class SuggestionsController < ApplicationController
   # GET /suggestions
   # GET /suggestions.json
   def index
-    @suggestions = Suggestion.all
+    @categories = Suggestion.all
+    @categories = @categories.group_by(&:category)
+    @categories.each {|k,v| @categories[k]=v.size if v}
+    @categories = @categories.sort_by {|k,v| -v}
+
+    puts @categories
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @suggestions }
+      format.html { render :template => "suggestions/index"}
+      format.json { render json: @categories }
     end
   end
 
   def category_index
     @category = params[:category]
-    @suggestions = Suggestion.where("category = ?",@category).order("suggestion_votes_count")
-    @suggestions.sort_by!(&:num_votes).reverse!
+    @suggestions = Suggestion.where("category = ?",@category).order("suggestion_votes_count desc")
 
     respond_to do |format|
-      format.html { render :template => "suggestions/index"}
+      format.html
       format.json { render json: @suggestions }
     end
   end
@@ -36,6 +40,7 @@ class SuggestionsController < ApplicationController
   # GET /suggestions/new.json
   def new
     @suggestion = Suggestion.new
+    @suggestion.category = params[:category]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -50,8 +55,12 @@ class SuggestionsController < ApplicationController
 
   def vote
     @suggestion = Suggestion.find(params[:id])
-    @suggestion.vote!(request.remote_ip)
-    redirect_to suggestion_path
+    @suggestion.vote!(request.remote_ip);
+    respond_to do |format|
+      format.html { redirect_to category_path(@suggestion.category) }
+      format.json { render json: Suggestion.find(params[:id]) }
+    end
+
   end
 
   # POST /suggestions
@@ -61,10 +70,10 @@ class SuggestionsController < ApplicationController
 
     respond_to do |format|
       if @suggestion.save
-        format.html { redirect_to @suggestion, notice: 'Suggestion was successfully created.' }
+        format.html { redirect_to category_path(@suggestion.category), notice: 'Suggestion was successfully created.' }
         format.json { render json: @suggestion, status: :created, location: @suggestion }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to category_path(@suggestion.category), notice: 'No suggestion created' }
         format.json { render json: @suggestion.errors, status: :unprocessable_entity }
       end
     end
@@ -93,7 +102,7 @@ class SuggestionsController < ApplicationController
     @suggestion.destroy
 
     respond_to do |format|
-      format.html { redirect_to suggestions_url }
+      format.html { redirect_to category_path(@suggestion.category) }
       format.json { head :no_content }
     end
   end

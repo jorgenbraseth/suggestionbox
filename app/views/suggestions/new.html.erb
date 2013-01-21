@@ -1,5 +1,9 @@
-<h1>New suggestion</h1>
+
+<div class="newSuggestionHeader">
+  <h1><%= link_to @suggestion.category, category_path %></h1>
+  <h2>New suggestion</h2>
+</div>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', suggestions_path %>
+

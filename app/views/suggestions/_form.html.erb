@@ -1,19 +1,19 @@
 <%= form_for(@suggestion) do |f| %>
-  <% if @suggestion.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@suggestion.errors.count, "error") %> prohibited this suggestion from being saved:</h2>
+    <% if @suggestion.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@suggestion.errors.count, "error") %> prohibited this suggestion from being saved:</h2>
 
-      <ul>
-      <% @suggestion.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+          <ul>
+            <% @suggestion.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
 
-    <%= f.text_field :category  %>
+    <%= f.hidden_field :category  %>
     <%= f.text_area :description  %>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="editActions">
+      <%= f.submit( {:class => "graphicButton"} )%>
+    </div>
 <% end %>

@@ -2,6 +2,7 @@ class Suggestion < ActiveRecord::Base
   has_many :suggestion_votes
 
   attr_accessible :category, :description
+  validates_presence_of :description
 
   def vote!(voter)
     unless(voted? voter)
@@ -16,7 +17,7 @@ class Suggestion < ActiveRecord::Base
   end
 
   def num_votes
-    suggestion_votes_count
+    suggestion_votes_count || 0
   end
 
 

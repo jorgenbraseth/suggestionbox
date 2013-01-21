@@ -11,3 +11,194 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+    background-color: #70a635;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 20px;
+}
+#content {
+    position: relative;
+}
+header {
+    position: relative;
+    overflow: hidden;
+}
+
+h1 {
+    display: inline-block;
+    margin: 0;
+    color: white;
+    font-size: 5em;
+    overflow: hidden;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.5);
+}
+h1 a {
+    color: inherit;
+    text-decoration: inherit;
+}
+h1 a:hover {
+    text-decoration: underline;
+}
+
+.newSuggestionHeader {
+    display: inline-block;
+    position: relative;
+}
+h2 {
+    color: rgba(0,0,0,0.5);
+    margin: 0;
+    position: relative;
+    bottom: 1em;
+    right: -1em;
+    text-align: right;
+}
+.newSuggestion {
+    display: inline-block;
+    margin: .5em 0 .5em 1em;
+}
+.newSuggestion a {
+    color: rgba(0,0,0,0.6);
+    text-decoration: none;
+}
+.newSuggestion a:hover {
+    text-decoration: underline;
+}
+
+
+#content {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.suggestionList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.suggestion,
+textarea {
+    font-size: inherit;
+    font-family: inherit;
+    clear: both;
+    position: relative;
+    background-color: white;
+    border: 3px solid rgba(0,0,0,0.75);
+    padding: 1em;
+    margin-bottom: 1em;
+    width: 100%;
+    text-decoration: none;
+}
+
+.suggestion footer {
+    margin-top: 1em;
+    padding: 0.1em .5em;
+    text-align: right;
+    color: rgba(0,0,0,0.5);
+}
+
+.suggestion .actions {
+    display: none;
+}
+.suggestion:hover .actions {
+    display: block;
+    padding: .1em;
+    position: absolute;
+    top: .5em;
+    left: 100%;
+}
+
+.suggestion .action a{
+    background-color: black;
+    color: white;
+    margin: .1em 0;
+    display: block;
+    float: left;
+    clear: both;
+    padding: .3em .6em .3em .5em;
+    border-radius: 0 .5em .5em 0;
+    text-decoration: none;
+}
+
+
+.graphicButton {
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    margin-left: .5em
+}
+
+.graphicButton {
+    background: #a6a6a6;
+    border-top: 1px solid #8a8a8a;
+    border-right: 1px solid #4d4d4d;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #4d4d4d;
+    box-shadow:
+        inset 0 1px 10px 1px #ededed,
+        0 1px 0 #4d4d4d,
+        0 2px 0 #525252,
+        0 4px 3px 0 #111111;
+    top: 4px;
+    text-shadow: 0 -1px 1px #4d4d4d;
+}
+
+.graphicButton.enabled {
+    color: #fff;
+    background: #4162a8;
+    border-top: 1px solid #38538c;
+    border-right: 1px solid #1f2d4d;
+    border-bottom: 1px solid #151e33;
+    border-left: 1px solid #1f2d4d;
+    -webkit-box-shadow:
+        inset 0 1px 10px 1px #5c8bee,
+        0 1px 0 #1d2c4d,
+        0 6px 0 #1f3053,
+        0 8px 4px 1px #111111;
+    box-shadow:
+        inset 0 1px 10px 1px #5c8bee,
+        0 1px 0 #1d2c4d,
+        0 6px 0 #1f3053,
+        0 8px 4px 1px #111111;
+    text-shadow: 0 -1px 1px #1e2d4d;
+    top: 0;
+}
+
+.graphicButton {
+    border-radius: 4px;
+    color: #eee;
+    font: bold 20px/1 "helvetica neue", helvetica, arial, sans-serif;
+    padding: 0 0 .7em 0;
+    text-align: center;
+    width: 25px;
+    height: 5px;
+    -webkit-background-clip: padding-box;
+    margin-bottom: 4px;
+}
+.graphicButton.enabled:hover {
+    box-shadow:
+        inset 0 0 20px 1px #87adff,
+        0 1px 0 #1d2c4d,
+        0 6px 0 #1f3053,
+        0 8px 4px 1px #111111;
+    cursor: pointer;
+}
+.graphicButton.enabled:active {
+    box-shadow:
+        inset 0 1px 10px 1px #5c8bee,
+        0 1px 0 #1d2c4d,
+        0 2px 0 #1f3053,
+        0 4px 3px 0 #111111;
+    top: 4px;
+}
+.editActions {
+    text-align: center;
+}
+input.graphicButton {
+    line-height: 2em;
+    height: 2em;
+    width: 10em;
+}
+
+
