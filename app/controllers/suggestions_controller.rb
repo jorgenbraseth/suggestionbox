@@ -12,7 +12,7 @@ class SuggestionsController < ApplicationController
 
   def category_index
     @category = params[:category]
-    @suggestions = Suggestion.where("category = ?",@category).order("suggestion_vote_count")
+    @suggestions = Suggestion.where("category = ?",@category).order("suggestion_votes_count")
     @suggestions.sort_by!(&:num_votes).reverse!
 
     respond_to do |format|
