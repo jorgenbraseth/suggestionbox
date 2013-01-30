@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f155a6fe-97f7-43c7-b84d-1fa349f48129" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/suggestions_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/suggestions_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/suggestions/category_index.html.erb" afterPath="$PROJECT_DIR$/app/views/suggestions/category_index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/suggestions/index.html.erb" afterPath="$PROJECT_DIR$/app/views/suggestions/index.html.erb" />
     </list>
     <ignored path="suggestionBox.iws" />
@@ -29,28 +26,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="category_index.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/suggestions/category_index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="33" selection-start="82" selection-end="82" vertical-scroll-proportion="-1.3076923">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="suggestions_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="suggestions_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/suggestions_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="11" selection-start="1502" selection-end="1502" vertical-scroll-proportion="0.78892213">
+            <state line="55" column="63" selection-start="1338" selection-end="1338" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/suggestions/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="6" selection-start="53" selection-end="53" vertical-scroll-proportion="-3.2692308">
+            <state line="6" column="14" selection-start="84" selection-end="84" vertical-scroll-proportion="0.1588785">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/routes.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="14" selection-start="549" selection-end="549" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -77,7 +74,7 @@
       <file leaf-file-name="application.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="233" column="55" selection-start="4592" selection-end="4592" vertical-scroll-proportion="0.0">
+            <state line="211" column="121" selection-start="4251" selection-end="4253" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -86,8 +83,10 @@
       <file leaf-file-name="application.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="31" selection-start="1279" selection-end="1279" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="51" column="63" selection-start="1812" selection-end="1812" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -117,13 +116,13 @@
         <option value="$PROJECT_DIR$/app/views/suggestions/new.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/buttons.scss" />
         <option value="$PROJECT_DIR$/app/views/suggestions/_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/models/suggestion.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/views/suggestions/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/suggestions/category_index.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
         <option value="$PROJECT_DIR$/app/controllers/suggestions_controller.rb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
+        <option value="$PROJECT_DIR$/app/views/suggestions/index.html.erb" />
       </list>
     </option>
   </component>
@@ -766,29 +765,40 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="14" selection-start="549" selection-end="549" vertical-scroll-proportion="0.28892216" />
+        <state line="9" column="17" selection-start="313" selection-end="313" vertical-scroll-proportion="0.23831776">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/suggestion.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/suggestions/category_index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="36" selection-start="146" selection-end="146" vertical-scroll-proportion="0.0">
+        <state line="2" column="10" selection-start="59" selection-end="59" vertical-scroll-proportion="0.0529595">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/suggestions_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="63" selection-start="1338" selection-end="1338" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="14" selection-start="549" selection-end="549" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="31" selection-start="1279" selection-end="1279" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="17" selection-start="313" selection-end="313" vertical-scroll-proportion="0.23831776">
-          <folding />
+        <state line="51" column="63" selection-start="1812" selection-end="1812" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -799,30 +809,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/suggestions/category_index.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="33" selection-start="82" selection-end="82" vertical-scroll-proportion="-1.3076923">
+        <state line="211" column="121" selection-start="4251" selection-end="4253" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
+    <entry file="file://$PROJECT_DIR$/app/models/suggestion.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="233" column="55" selection-start="4592" selection-end="4592" vertical-scroll-proportion="0.0">
+        <state line="4" column="36" selection-start="146" selection-end="146" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/suggestions/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="6" selection-start="53" selection-end="53" vertical-scroll-proportion="-3.2692308">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/suggestions_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="11" selection-start="1502" selection-end="1502" vertical-scroll-proportion="0.78892213">
+        <state line="6" column="14" selection-start="84" selection-end="84" vertical-scroll-proportion="0.1588785">
           <folding />
         </state>
       </provider>

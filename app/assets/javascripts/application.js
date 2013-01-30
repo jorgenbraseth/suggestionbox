@@ -44,4 +44,12 @@ $(function(){
             e.preventDefault();
         }
     });
+
+    $("#newCategoryName").keypress(function(e){
+        if(e.charCode == 13){
+            categoryName = $(this).val();
+            rootPath = $(this).data("category-path");
+            window.location = rootPath + "box/" + categoryName;
+        }
+    })
 });
