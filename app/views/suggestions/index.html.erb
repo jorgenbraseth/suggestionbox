@@ -3,15 +3,19 @@
 
 </header>
 
+<div id="newCategory">
+  New category <input type="text" placeholder="Name of category" autofocus="true" />
+</div>
+
 <ul class="suggestionList">
   <li class="suggestion">
     <% @categories.each do |category| %>
         <div class="category">
-        <a href="<%= category_path(category.first) %>">"<span class="name"><%= category.first %></span>"</a>
-        (<span class="count"><%= category.second %> suggestions)</span>
+          <a href="<%= category_path(category.first) %>">"<span class="name"><%= category.first %></span>"</a>
+          (<span class="count"><%= category.second %> suggestions)</span>
         </div>
 
-  <% end %>
+    <% end %>
   </li>
 </ul>
 

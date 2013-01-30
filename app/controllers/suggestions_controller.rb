@@ -55,7 +55,15 @@ class SuggestionsController < ApplicationController
 
   def vote
     @suggestion = Suggestion.find(params[:id])
-    @suggestion.vote!(request.remote_ip);
+
+    voteBy = request.remote_ip
+
+    forwardedIP = request.headers["X-Forwarded-For"]
+    if forwardedIP
+      voteBy += "forwarded for #{forwardedIP}"
+    end
+
+    @suggestion.vote!(voteBy)
     respond_to do |format|
       format.html { redirect_to category_path(@suggestion.category) }
       format.json { render json: Suggestion.find(params[:id]) }
