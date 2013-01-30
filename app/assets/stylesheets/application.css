@@ -90,8 +90,14 @@ textarea {
     border: 3px solid rgba(0,0,0,0.75);
     padding: 1em;
     margin-bottom: 1em;
-    /*width: 100%;*/
+
     text-decoration: none;
+}
+textarea {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    width: 100%;
 }
 
 input {
