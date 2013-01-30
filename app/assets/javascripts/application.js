@@ -39,7 +39,7 @@ $(function(){
         }
     })
 
-    $(".graphicButton").live("click",function(e){
+    $(".graphicButton").on("click",function(e){
         if(!$(this).hasClass("enabled")){
             e.preventDefault();
         }
