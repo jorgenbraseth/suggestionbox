@@ -15,7 +15,7 @@
         &bdquo;<%= suggestion.description %>&ldquo;
         <footer>
           <span class="voteCount" >Votes: <span class="count"><%= suggestion.num_votes %></span>
-          <a href="<%= vote_path(suggestion) %>" class="voteLink graphicButton <%= suggestion.voted?(request.remote_ip) ? "":"enabled" %>">+</a>
+          <a href="<%= vote_path(suggestion) %>" class="voteLink graphicButton <%= suggestion.voted?(@who_am_i) ? "":"enabled" %>">+</a>
           </span>
         </footer>
         <div class="actions">

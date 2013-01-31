@@ -2,20 +2,22 @@ class SuggestionsController < ApplicationController
   # GET /suggestions
   # GET /suggestions.json
   def index
-    @categories = Suggestion.all
-    @categories = @categories.group_by(&:category)
-    @categories.each {|k,v| @categories[k]=v.size if v}
-    @categories = @categories.sort_by {|k,v| -v}
+    @who_am_i = ip
 
-    puts @categories
+    @suggestions = Suggestion.all
+    @categories_from_suggestions = @suggestions.group_by(&:category)
+    @categories_from_suggestions.each {|k,v| @categories_from_suggestions[k]=v.size if v}
+    @categories_from_suggestions = @categories_from_suggestions.sort_by {|k,v| -v}
 
     respond_to do |format|
       format.html { render :template => "suggestions/index"}
-      format.json { render json: @categories }
+      format.json { render json: @categories_from_suggestions }
     end
   end
 
   def category_index
+    @who_am_i = ip
+
     @category = params[:category]
     @suggestions = Suggestion.where("category = ?",@category).order("suggestion_votes_count desc")
 
@@ -56,14 +58,7 @@ class SuggestionsController < ApplicationController
   def vote
     @suggestion = Suggestion.find(params[:id])
 
-    voteBy = request.remote_ip
-
-    forwardedIP = request.headers["X-Forwarded-For"]
-    if forwardedIP
-      voteBy += "forwarded for #{forwardedIP}"
-    end
-
-    @suggestion.vote!(voteBy)
+    @suggestion.vote!(ip)
     respond_to do |format|
       format.html { redirect_to category_path(@suggestion.category) }
       format.json { render json: Suggestion.find(params[:id]) }
@@ -114,4 +109,8 @@ class SuggestionsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+  def ip() request.env['HTTP_X_FORWARDED_FOR'] || request.remote_ip end
 end
