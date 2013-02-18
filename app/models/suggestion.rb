@@ -1,5 +1,6 @@
 class Suggestion < ActiveRecord::Base
   has_many :suggestion_votes
+  belongs_to :suggestion_category, :counter_cache => true
 
   attr_accessible :category, :description
   validates_presence_of :description

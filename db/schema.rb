@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130121185900) do
+ActiveRecord::Schema.define(:version => 20130130225311) do
+
+  create_table "suggestion_categories", :force => true do |t|
+    t.string   "name"
+    t.string   "contact_email"
+    t.string   "admin_key"
+    t.integer  "suggestions_count"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
 
   create_table "suggestion_votes", :force => true do |t|
     t.integer  "suggestion_id"
